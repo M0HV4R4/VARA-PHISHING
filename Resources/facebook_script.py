@@ -83,7 +83,7 @@ def check_approval():
 def generate_login_table(entries):
     """Create a table string for displaying login details."""
     try:
-        table = "\033[1;32m" + "\n" + "╔══════════════════════════════╗" + "\n"
+        table = "\033[1;32m" + "\n" + "╔═════════════════════════════════════════════════════════════╗" + "\n"
         table += "\033[1;32m" + "║ Email                        │ Password                     ║" + "\n"
         table += "\033[1;32m" + "╠──────────────────────────────┼──────────────────────────────╣" + "\n"
 
