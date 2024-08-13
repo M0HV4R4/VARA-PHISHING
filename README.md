@@ -5,11 +5,11 @@ This project is a software tool that creates a professional fraudulent page that
 
 #The tool works as follows:
 -------------------------------------------------------------------------------------------------------
-1.Choose any page you want to work on (Instagram/Facebook).
-2.Enter a direct link (the victim will be directed to the entered link so that he will never suspect).
-3.The tool displays the victim's login information (username/password).
-4.The tool directs the victim to the two-factor authentication page so that when you log in to the victim's account, he will give you the authentication.
-4.After giving the victim the authentication, you can accept directing him to the link entered before.
+#1.Choose any page you want to work on (Instagram/Facebook).
+#2.Enter a direct link (the victim will be directed to the entered link so that he will never suspect).
+#3.The tool displays the victim's login information (username/password).
+#4.The tool directs the victim to the two-factor authentication page so that when you log in to the victim's account, he will give you the authentication.
+#5.After giving the victim the authentication, you can accept directing him to the link entered before.
 -------------------------------------------------------------------------------------------------------
 
 # Requirements
