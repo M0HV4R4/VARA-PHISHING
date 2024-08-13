@@ -44,11 +44,12 @@ def main_menu():
         input("Press Enter to return to the menu...")
         main_menu()
 
+import sys
+
 def run_instagram_script():
     """تشغيل سكريبت إنستغرام"""
-    script_path = os.path.join('Resources', 'instagram_script.py')
     try:
-        subprocess.run(["python", script_path], check=True)
+        subprocess.run([sys.executable, "Resources/instagram_script.py"], check=True)
     except subprocess.CalledProcessError as e:
         print(Fore.RED + f"Error occurred: {e}")
     except Exception as e:
@@ -56,9 +57,8 @@ def run_instagram_script():
 
 def run_facebook_script():
     """تشغيل سكريبت فيسبوك"""
-    script_path = os.path.join('Resources', 'facebook_script.py')
     try:
-        subprocess.run(["python", script_path], check=True)
+        subprocess.run([sys.executable, "Resources/facebook_script.py"], check=True)
     except subprocess.CalledProcessError as e:
         print(Fore.RED + f"Error occurred: {e}")
     except Exception as e:
