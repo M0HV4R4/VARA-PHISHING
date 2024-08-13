@@ -17,5 +17,7 @@ This project is a software tool that creates a professional fraudulent page that
 - Libraries: See [requirements.txt](requirements.txt) to install the required libraries.
 
 # Installation
-1. Download the repository:
-git clone https://github.com/MoH-CHiGi/VARA-PHISHING
+1. Download the repository : git clone https://github.com/MoH-CHiGi/VARA-PHISHING
+2. cd VARA-PHISHING
+3. pip install -r requirements.txt
+4. python3 MOHVARA.py
